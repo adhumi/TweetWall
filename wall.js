@@ -2,6 +2,7 @@
  * Cette fonction recupère le JSON correspondant à la recherche, 
  * insère les images correspondantes dans la page HTML et 
  * conserve l'historique de recherche dans un Cookie
+ * @author Adrien Humilière
  * @returns {Boolean}
  */
 function showImages() {			
@@ -86,7 +87,7 @@ function readCookie () {
 	if(list.length != 0 && list[0] != "") {
 		content += "<h2>Recherches precedentes</h2><ol>";
 		for (var i=0; i < list.length && i<10; i++) {
-			if (list[i] != "") {
+			if (list[i] != "NoNE" && list[i] != "") {
 				content += "<li><a href=\"#\" onclick=\"getHistorique('" + list[i] + "')\" >" + list[i] + "</a></li>";
 			}
 		}
@@ -102,7 +103,7 @@ function readCookie () {
 function clearCookie() {
 	document.getElementById('wall').innerHTML = "";
 	var name = "TweetWall_RecentlySearched" ;
-	var content = "";
+	var content = "NoNE";
 	var expdate = new Date () ;
 	expdate.setTime (expdate.getTime() - ( 10 * 24 * 60 * 60 * 1000)) ;
 	document.cookie = name + "=" + content + "; expires=" + expdate.toGMTString() +";";
@@ -112,6 +113,7 @@ function clearCookie() {
 
 /**
  * Fonction permettant de récupérer une recherche de l'historique
+ * @author Adrien Humilière
  * @param valeur
  */
 function getHistorique (valeur) {
