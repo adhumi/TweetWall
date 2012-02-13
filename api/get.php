@@ -5,6 +5,21 @@
  * à la recherche indiquée en $_GET.
  * @author Adrien Humilière
  */
-header ( 'Content-Type: application/json' );
-echo file_get_contents ( "http://search.twitter.com/search.json?q=" . urlencode ( $_GET ['q'] ) . "+exclude:retweets&rpp=100&result_type=recent" );
+$cache = "cache/get_".urlencode ( $_GET ['q'] ).".html";
+$expire = time() - 60 ; // valable une heure
+ 
+if(file_exists($cache) && filemtime($cache) > $expire) {
+	readfile($cache);
+} else {
+    ob_start();
+        
+	echo file_get_contents ( "http://search.twitter.com/search.json?q=" . urlencode ( $_GET ['q'] ) . "+exclude:retweets&rpp=100&result_type=recent" );
+        
+    $page = ob_get_contents();
+    ob_end_clean();
+        
+    file_put_contents($cache, $page);
+    echo $page;
+}
+
 ?>
