@@ -151,7 +151,9 @@ function getSearch (valeur) {
 }
 
 /**
- * 
+ * Fonction qui permet l'affichage des Trending Topics dans une bulle à
+ * coté du champ de recherche.
+ * @author Adrien Humilière
  */
 function displayTrends () {
 	var trends = "<div id=\"trends\">";
@@ -196,7 +198,8 @@ function displayTrends () {
 }
 
 /**
- * 
+ * Récupération d'un TT pour recherche
+ * @param chaine
  */
 function getTrend(chaine) {
 	getSearch(chaine);
@@ -204,7 +207,7 @@ function getTrend(chaine) {
 }
 
 /**
- * 
+ * Fonction qui permet de masquer la bulle des TT
  */
 function hideTrends() {
 	document.getElementById('trend_block').innerHTML = "";

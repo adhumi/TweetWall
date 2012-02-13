@@ -38,6 +38,7 @@
 			src="http://www.w3.org/Icons/valid-xhtml10"
 			alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
 	</p>
+	<!--<p class="github">Dev par <a href="http://www.adhumi.fr">adhumi</a> | <a href="https://github.com/adhumi/TweetWall">Code</a></p>-->
 
 </body>
 </html>
