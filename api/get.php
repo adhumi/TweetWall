@@ -5,6 +5,6 @@
  * à la recherche indiquée en $_GET.
  * @author Adrien Humilière
  */
-header('Content-Type: application/json');
-echo file_get_contents("http://search.twitter.com/search.json?q=" . str_replace(" ","%20",$_GET['q']) . "&rpp=100&result_type=recent");
+header ( 'Content-Type: application/json' );
+echo file_get_contents ( "http://search.twitter.com/search.json?q=" . urlencode ( $_GET ['q'] ) . "+exclude:retweets&rpp=100&result_type=recent" );
 ?>

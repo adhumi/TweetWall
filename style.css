@@ -50,12 +50,23 @@ h1 {
 	text-shadow: #000 2px 2px 2px;
 }
 
+h1:hover {
+	background:url('twitter_logo.png') no-repeat 0px 18px, url('bg-header.png') no-repeat top center;
+}
+
 h1 a {
 	color:white;
 	text-decoration:none;
 }
 
 input[type=text] {
+	width:428px;
+	font-size:1em;
+	color: #444;
+	border:0px;
+}
+
+p.twSearch {
 	width:478px;
 	padding:10px;
 	font-size:1.5em;
@@ -64,6 +75,25 @@ input[type=text] {
 	-webkit-border-radius:3px;
 	border:#999 solid 1px;
 	color: #444;
+}
+
+p.twSearch a {
+	width:32px;
+	height:30px;
+	float:right;
+	background:url('trend.png') center center no-repeat;
+	border:0;
+	display:block;
+	cursor:pointer;
+}
+
+p.twSearch a:active {
+	margin-top:1px;
+}
+
+p.twSearch a:hover {
+	opacity:0.8;
+	filter:alpha(opacity=80);
 }
 
 .myButton {
@@ -87,7 +117,7 @@ input[type=text] {
 	text-decoration:none;
 	text-shadow:1px 1px 0px #689324;
 	margin:10px 10px 0 0;
-	width:390px;
+	width:395px;
 }
 
 .myButton:hover {
@@ -122,7 +152,7 @@ input[type=text] {
 	padding:6px 0px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #810e05;
-	width:100px;
+	width:90px;
 }
 
 .myButtonRed:hover {
@@ -149,6 +179,7 @@ input[type=text] {
 
 #wall IMG:hover {
 	opacity:0.8;
+	filter:alpha(opacity=80);
 }
 
 #recent_searches {
@@ -177,7 +208,7 @@ p.w3 {
 p.loader {
 	text-align:center;
 	width:220px;
-	margin:auto;
+	margin:10px auto;
 }
 
 #wall p.loader IMG {
@@ -197,4 +228,50 @@ p#presentation {
 	margin:auto;
 	text-align:center;
 	font-style:italic;
+}
+
+/*ul.trends {
+	display:block;
+	background:#FFF;
+	border:0px #999 solid;
+	border-width:0 1px 1px 1px;
+	list-style-type:none;
+	position:relative;
+	width:300px;
+	float:right;
+	margin:-1px 10px 0 0;
+	z-index:10;
+}
+*/
+
+#trend_block {
+	
+}
+
+#trends {
+	background:#fff;
+	display:block;
+	position:relative;
+	float:right;
+	width:250px;
+	margin:-85px -230px 0 0;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	//border:#999 solid 1px;
+	box-shadow:#000 1px 1px 2px;
+	-moz-box-shadow:#000 1px 1px 2px;
+	-webkit-box-shadow:#000 1px 1px 2px;
+	font-size:0.9em;
+}
+
+#trends p a {
+	display:block;
+	padding:4px 10px;
+	text-decoration:none;
+}
+
+
+#trends p a:hover {
+	background-color:#eee;
 }
