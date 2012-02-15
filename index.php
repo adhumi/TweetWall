@@ -5,19 +5,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>TweetWall</title>
 <script type="text/javascript" src="wall.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" media="screen" href="style.css" />
+<link rel="shortcut icon" href="favicon.ico" />
+
+<!-- Infos spéciales pour navigateus mobiles -->
+<link rel="stylesheet"
+	media="handheld, only screen and (max-device-width: 640px)"
+	href="mobile.css" />
+<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="apple-touch-icon-precomposed" href="img/icon-touch.png"/>
+
 </head>
 <body onload="initialisation();" onclick="hideTrends();">
 	<h1>
 		<a href="">TweetWall</a>
 	</h1>
-	<p id="presentation">Vous voulez savoir qui parle de vos sujets
-		préférés sur Twitter ? C'est ici !</p>
+	<p id="presentation">Vous voulez voir qui parle de vos sujets préférés
+		sur Twitter ? C'est ici !</p>
 	<div id="main">
-		<form action="" name="searchForm">
+		<form action="" id="searchForm">
 			<p class="twSearch">
-				<input id="twSearch" type="text" name="search" />
-				<a id="getTrends" onclick="displayTrends(); return false;"></a>
+				<input id="twSearch" type="text" name="search" /> <a id="getTrends"
+					onclick="displayTrends(); return false;"></a>
 			</p>
 			<p>
 				<input type="submit" onclick="showImages(); return false;"
@@ -25,9 +35,8 @@
 				<button onclick="clearCookie(); return false;" class="myButtonRed">Effacer</button>
 			</p>
 		</form>
-		
-		<div id="trend_block">
-		</div>
+
+		<div id="trend_block"></div>
 		<div id="wall"></div>
 		<div id="recent_searches"></div>
 

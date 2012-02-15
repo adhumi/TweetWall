@@ -46,12 +46,12 @@ h1 {
 	font-weight:normal;
 	padding-left:110px;
 	width:350px;
-	background:url('twitter_logo.png') no-repeat 0px 18px;
+	background:url('img/twitter_logo.png') no-repeat 0px 18px;
 	text-shadow: #000 2px 2px 2px;
 }
 
 h1:hover {
-	background:url('twitter_logo.png') no-repeat 0px 18px, url('bg-header.png') no-repeat top center;
+	background:url('img/twitter_logo.png') no-repeat 0px 18px, url('img/bg-header.png') no-repeat top center;
 }
 
 h1 a {
@@ -81,7 +81,7 @@ p.twSearch a {
 	width:32px;
 	height:30px;
 	float:right;
-	background:url('trend.png') center center no-repeat;
+	background:url('img/trend.png') center center no-repeat;
 	border:0;
 	display:block;
 	cursor:pointer;
@@ -201,8 +201,10 @@ ol li:before {
 }
 
 p.w3 {
-	margin:20px 0 0 0;
+	margin:20px auto 10px auto;
 	text-align:center;
+	width:100px;
+	
 }
 
 p.loader {
@@ -228,24 +230,6 @@ p#presentation {
 	margin:auto;
 	text-align:center;
 	font-style:italic;
-}
-
-/*ul.trends {
-	display:block;
-	background:#FFF;
-	border:0px #999 solid;
-	border-width:0 1px 1px 1px;
-	list-style-type:none;
-	position:relative;
-	width:300px;
-	float:right;
-	margin:-1px 10px 0 0;
-	z-index:10;
-}
-*/
-
-#trend_block {
-	
 }
 
 #trends {

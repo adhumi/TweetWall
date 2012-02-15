@@ -38,7 +38,7 @@ function showImages() {
 		}
 	}
 	req.open("GET", "/tw/api/get.php?q=" + encodeURIComponent(val), true);
-	document.getElementById('wall').innerHTML = "<p class=\"loader\"><img src=\"loader.gif\" alt=\"Patientez...\" /></p>";
+	document.getElementById('wall').innerHTML = "<p class=\"loader\"><img src=\"img/loader.gif\" alt=\"Patientez...\" /></p>";
 	// On parse le JSON et on insère le code HTML qui permet d'afficher les images
 	req.onreadystatechange = function() {
 		if (req.readyState == 4) { 
@@ -88,8 +88,13 @@ function showImages() {
  * @author Adrien Humilière
  */
 function initialisation () {
-	document.searchForm.search.focus();
+	document.getElementById("searchForm").search.focus();
 	readCookie();
+	
+	// Hack pour masquer la barre d'adresse sur les navigateurs mobiles
+	if (screen.width <= 699) {
+		setTimeout(function() { window.scrollTo(0, 1) }, 100);
+	}
 }
 
 /**
@@ -118,7 +123,7 @@ function readCookie () {
 		content += "<h2>Recherches precedentes</h2><ol>";
 		for (var i=0; i < list.length && i<10; i++) {
 			if (list[i] != "") {
-				content += "<li><a href=\"#\" onclick=\"getSearch('" + list[i] + "')\" >" + list[i] + "</a></li>";
+				content += "<li><a href=\"#\" onclick=\"getSearch('" + escape(list[i]) + "')\" >" + list[i] + "</a></li>";
 			}
 		}
 		content += "</ol>";
@@ -146,7 +151,7 @@ function clearCookie() {
  * @param valeur
  */
 function getSearch (valeur) {
-	document.getElementById('twSearch').value = valeur; 
+	document.getElementById('twSearch').value = unescape(valeur); 
 	showImages(); 
 }
 
@@ -156,6 +161,7 @@ function getSearch (valeur) {
  * @author Adrien Humilière
  */
 function displayTrends () {
+	if (document.getElementById('trend_block').innerHTML == "") {
 	var trends = "<div id=\"trends\">";
 	var doc;
 	
@@ -178,7 +184,7 @@ function displayTrends () {
 		}
 	};
 	req2.open("GET", "/tw/api/trends.php", true);
-	document.getElementById('trend_block').innerHTML = "<div id=\"trends\"><p class=\"loader\"><img src=\"loader.gif\" alt=\"Patientez...\" /></p></div>";
+	//document.getElementById('trend_block').innerHTML = "<div id=\"trends\"><p class=\"loader\"><img src=\"loader.gif\" alt=\"Patientez...\" /></p></div>";
 	// On parse le JSON et on insère le code HTML qui permet d'afficher les images
 	req2.onreadystatechange = function() {
 		if (req2.readyState == 4) { 
@@ -194,6 +200,9 @@ function displayTrends () {
 		}
 	}
 	req2.send(null);
+	} else {
+		document.getElementById('trend_block').innerHTML = "";
+	}
 
 }
 
