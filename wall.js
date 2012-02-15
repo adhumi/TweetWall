@@ -67,9 +67,9 @@ function showImages() {
 
 	// Génération du nouveau contenu du cookie
 	var content = "";
-	content += search.value ;
+	content += escape(search.value) ;
 	for (var i=0; i < list.length && i<9; i++) {
-		content += "##" + list[i];
+		content += "##" + escape(list[i]);
 	}
 
 	// Mise à jour du cookie
