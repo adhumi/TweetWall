@@ -21,8 +21,7 @@
 	<h1>
 		<a href="">TweetWall</a>
 	</h1>
-	<p id="presentation">Vous voulez voir qui parle de vos sujets préférés
-		sur Twitter ? C'est ici !</p>
+	<p id="presentation">Vous voulez voir qui parle de vos sujets préférés sur Twitter ? C'est ici !</p>
 	<div id="main">
 		<form action="" id="searchForm">
 			<p class="twSearch">
@@ -41,7 +40,7 @@
 		<div id="recent_searches"></div>
 
 	</div>
-
+	
 	<p class="w3">
 		<a href="http://validator.w3.org/check?uri=referer"><img
 			src="http://www.w3.org/Icons/valid-xhtml10"

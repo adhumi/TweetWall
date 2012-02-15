@@ -1,0 +1,20 @@
+{
+	"fr":{
+		"text_intro":"Vous voulez voir qui parle de vos sujets préférés sur Twitter ? C'est ici !",
+		"search":"Rechercher",
+		"clear":"Effacer",
+		"history":"Recherches precedentes"
+	},
+	"en":{
+		"text_intro":"Want to know who speaks about your favorite topics on Twitter? Here it is!",
+		"search":"Search",
+		"clear":"Clear",
+		"history":"Previous searches"
+	},
+	"de":{
+		"text_intro":"Wollen sie sehen wer über ihre Lieblings-themen twittert ? Hier ist die Lösung !",
+		"search":"Suche",
+		"clear":"Löschen",
+		"history":"Bisherige Forschungen"
+	}
+}

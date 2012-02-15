@@ -118,8 +118,7 @@ function readCookie () {
 	var value = getCookieVal("TweetWall_RecentlySearched");
 	var list = value.split("##");
 	var content = "";
-
-	if(list.length != 0 && list[0] != "") {
+	if(list.length != 0 && list[0] != "" && list[0] != "; __ut") {
 		content += "<h2>Recherches precedentes</h2><ol>";
 		for (var i=0; i < list.length && i<10; i++) {
 			if (list[i] != "") {
